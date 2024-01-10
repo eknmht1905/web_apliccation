@@ -1,0 +1,47 @@
+﻿@model hotelapp_frontend.Models.Reservaciones
+
+@{
+    ViewData["Title"] = "Edit Reservation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Rezervasyonları Düzenle</h2>
+    <form asp-action="EditarAdmin" method="post">
+        <input type="hidden" asp-for="IDReservacion" />
+
+        <div class="form-group">
+            <label for="IDHabitacion">Oda ID:</label>
+            <input type="number" id="IDHabitacion" name="IDHabitacion" class="form-control" asp-for="IDHabitacion" required>
+        </div>
+
+        <div class="form-group">
+            <label for="IDUsuario">Kullanıcı ID:</label>
+            <input type="number" id="IDUsuario" name="IDUsuario" class="form-control" asp-for="IDUsuario" required>
+        </div>
+
+        <div class="form-group">
+            <label for="CantidadNoches">Gece Sayısı:</label>
+            <input type="number" id="CantidadNoches" name="CantidadNoches" class="form-control" asp-for="CantidadNoches" required>
+        </div>
+
+        <div class="form-group">
+            <label for="FechaInicio">Başlangıç Tarihi:</label>
+            <input type="date" id="FechaInicio" name="FechaInicio" class="form-control" asp-for="FechaInicio" required>
+        </div>
+
+        <div class="form-group">
+            <label for="FechaFin">Bitiş Tarihi:</label>
+            <input type="date" id="FechaFin" name="FechaFin" class="form-control" asp-for="FechaFin" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Costo_Total">Toplam Maliyet:</label>
+            <input type="number" id="Costo_Total" name="Costo_Total" class="form-control" asp-for="Costo_Total" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+        <a asp-action="ReservacionesAdmin" class="btn btn-secondary">Rezervasyonlara Geri Dön</a>
+    </form>
+</div>
+

@@ -1,0 +1,60 @@
+﻿@model hotelapp_frontend.Models.Habitacion
+
+<section class="rooms-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    <h2>Düzenle</h2>
+                    <div class="bt-option">
+                        <a asp-area="" asp-controller="Room" asp-action="Index">Oda</a>
+                        <span>Düzenle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <form asp-action="Editar" method="post">
+                    <input type="hidden" asp-for="IDHabitacion" />
+                    <div class="ri-text">
+                        <br/>
+                        <h4>Özellikler</h4>
+                        <br />
+                        <div class="form-group">
+                            <label for="NombreHabitacion">İsim:</label>
+                            <input type="text" id="NombreHabitacion" name="NombreHabitacion" class="form-control" asp-for="NombreHabitacion" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Descripcion">Tanım:</label>
+                            <textarea id="Descripcion" name="Descripcion" class="form-control" asp-for="Descripcion" maxlength="500" required>@Model.Descripcion</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="Path_Img">Resim URL:</label>
+                            <input type="text" id="Path_Img" name="Path_Img" class="form-control" asp-for="Path_Img" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="CantPersonas">Kapasite:</label>
+                            <input type="number" id="CantPersonas" name="CantPersonas" class="form-control" asp-for="CantPersonas" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="CantCamas">Yatak Sayısı:</label>
+                            <input type="number" id="CantCamas" name="CantCamas" class="form-control" asp-for="CantCamas" required>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Disponible" class="form-check-label">Mevcut Mu:</label>
+                            <div class="form-check form-check-inline">
+                                <input asp-for="Disponible" type="checkbox" class="form-check-input">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="CostoNoche">Gecelik Maliyet:</label>
+                            <input type="number" id="CostoNoche" name="CostoNoche" class="form-control" asp-for="CostoNoche" required>
+                        </div>
+                        <button type="submit" class="modify-btn">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<style>
+    .container-login {
+        background-image: url('https://cdn.wallpapersafari.com/36/30/IwygkQ.jpg'); /* Replace 'image_path' with the path to your background image */
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.5); /* Change the value 0.5 according to the desired opacity level */
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .card-login {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.3); /* Change the value 0.8 according to the desired opacity level */
+        color: white; /* Change text color according to your preference */
+        padding: 20px; /* Add a 20px space around the content of the card */
+    }
+
+        .card-login h3,
+        .card-login label,
+        .card-login a,
+        .card-login p {
+            color: white; /* Change text color to white */
+        }
+</style>
+
+<body>
+    <div class="container-login">
+        <div class="overlay"></div>
+        <div class="row justify-content-center">
+            <div class="col-md-14">
+                <div class="card card-login border-0">
+                    <div class="card-body">
+                        <h3 class="text-center mb-4">Mrz Lüx Otel Giriş</h3>
+                        <form asp-controller="User" asp-action="Login" method="post">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                <label for="email">E-Posta:</label>
+                                <input type="email" class="form-control" id="email" name="correo" placeholder="E-Posta Adresiniz" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Şifre:</label>
+                                <input type="password" class="form-control" id="password" name="contrasena" placeholder="Şifreniz" required>
+                            </div>
+                            <button type="submit" class="btn btn-outline-secondary btn-block" value="Login">Giriş Yap</button>
+                        </form>
+                        <div class="text-center mt-3">
+                            <a href="@Url.Action("ForgotPassword", "User")" class="btn">Şifrenizi Mi Unuttunuz?</a>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p>Hesabınız mı yok? <a href="@Url.Action("Crear", "User")" class="btn">Kayıt Ol</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

@@ -1,0 +1,38 @@
+﻿@model hotelapp_frontend.Models.Reservaciones
+
+@{
+    ViewData["Title"] = "Reservation Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Reservazyon Özellikleri</h2>
+    <dl class="row">
+        <dt class="col-sm-3">Rezervasyon Numarası:</dt>
+        <dd class="col-sm-9">@Model.IDReservacion</dd>
+
+        <dt class="col-sm-3">Oda ID:</dt>
+        <dd class="col-sm-9">@Model.IDHabitacion</dd>
+
+        <dt class="col-sm-3">Kullanıcı:</dt>
+        <dd class="col-sm-9">Kullanıcı @Model.IDUsuario</dd>
+
+        <dt class="col-sm-3">Geceler:</dt>
+        <dd class="col-sm-9">@Model.CantidadNoches</dd>
+
+        <dt class="col-sm-3">Başlangıç Tarihi:</dt>
+        <dd class="col-sm-9">@Model.FechaInicio.ToShortDateString()</dd>
+
+        <dt class="col-sm-3">Bitiş Tarihi:</dt>
+        <dd class="col-sm-9">@Model.FechaFin.ToShortDateString()</dd>
+
+        <dt class="col-sm-3">Toplam Maliyet:</dt>
+        <dd class="col-sm-9">@Model.Costo_Total TL</dd>
+    </dl>
+
+    <div class="row">
+        <div class="col-md-12">
+            <a asp-action="ReservacionesAdmin" class="btn btn-primary">Rezervasyonlara Geri Dön</a>
+        </div>
+    </div>
+</div>

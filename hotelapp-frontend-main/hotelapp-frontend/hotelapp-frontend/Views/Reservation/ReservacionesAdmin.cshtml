@@ -1,0 +1,69 @@
+﻿@model IEnumerable<hotelapp_frontend.Models.Reservaciones>
+
+@{
+    ViewData["Title"] = "Reservations Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (!Model.Any())
+{
+    <p>Reservations not found!</p>
+}
+else
+{
+    <br />
+    <br />
+    <br />
+    <section class="rooms-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Rezervasyon Bakımı</h3>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Rezervasyon Numarası</th>
+                                <th>Oda ID</th>
+                                <th>Kullanıcı</th>
+                                <th>Geceler</th>
+                                <th>Başlangıç Tarihi</th>
+                                <th>Bitiş Tarihi</th>
+                                <th>Toplam Maliyet</th>
+                                <th>Haraketler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var reservacion in Model)
+                            {
+                                <tr>
+                                    <td>@reservacion.IDReservacion</td>
+                                    <td>@reservacion.IDHabitacion</td>
+                                    <td>Kullanıcı @reservacion.IDUsuario</td>
+                                    <td>@reservacion.CantidadNoches</td>
+                                    <td>@reservacion.FechaInicio.ToShortDateString()</td>
+                                    <td>@reservacion.FechaFin.ToShortDateString()</td>
+                                    <td>@reservacion.Costo_Total</td>
+                                    <td>
+                                        <a href="@Url.Action("DetalleAdmin", "Reservation", new { id = reservacion.IDReservacion })" class="btn btn-info">Detaylar</a>
+                                        <a href="@Url.Action("EditarAdmin", "Reservation", new { id = reservacion.IDReservacion })" class="btn btn-warning">Düzenle</a>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_@reservacion.IDReservacion">Sil</button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="deleteModal_@reservacion.IDReservacion" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                            <div class="modal-body">
+                                                Bu rezervasyonu silmek istediğinizden emin misiniz: @reservacion.IDReservacion?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="@Url.Action("Eliminar", "Reservation", new { id = reservacion.IDReservacion })" class="btn btn-danger">Sil</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+}

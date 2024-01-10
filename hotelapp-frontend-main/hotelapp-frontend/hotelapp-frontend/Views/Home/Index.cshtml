@@ -1,0 +1,398 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Access the session variables
+    var httpContext = ViewContext.HttpContext;
+    string nombreUsuario = httpContext.Session.GetString("NombreUsuario");
+    int? rolUsuario = httpContext.Session.GetInt32("RolUsuario");
+}
+
+<!-- Hero Section Begin -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hero-text">
+                    <h1>MRZ Otel</h1>
+                    <p>
+                        1980'lerin başında, Mahmut Maraz Ekinci tarafından Konya'da kurulan MRZ Oteli, şehrin prestijli konaklama mekânlarından biri oldu.
+                    </p>
+                    <a href="#" class="primary-btn">Şimdi Keşfet</a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
+                <div class="booking-form">
+                    <h3>Otel Rezervasyonu</h3>
+                    <form action="#">
+                        <div class="check-date">
+                            <label for="date-in">Giriş Tarihi:</label>
+                            <input type="text" class="date-input" id="date-in">
+                            <i class="icon_calendar"></i>
+                        </div>
+                        <div class="check-date">
+                            <label for="date-out">Çıkış Tarihi:</label>
+                            <input type="text" class="date-input" id="date-out">
+                            <i class="icon_calendar"></i>
+                        </div>
+                        <div class="select-option">
+                            <label for="guest">Misafirler:</label>
+                            <select id="guest">
+                                <option value="">2 Kişi</option>
+                                <option value="">3 Kişi</option>
+                            </select>
+                        </div>
+                        <div class="select-option">
+                            <label for="room">Oda:</label>
+                            <select id="room">
+                                <option value="">1 Oda</option>
+                                <option value="">2 Oda</option>
+                            </select>
+                        </div>
+                        <button type="submit">Kullanılabilirliği Kontrol et</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slider owl-carousel">
+        <div class="hs-item set-bg" data-setbg="img/hero/hero-1.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/hero/hero-2.jpg"></div>
+        <div class="hs-item set-bg" data-setbg="img/hero/hero-3.jpg"></div>
+    </div>
+</section>
+<!-- Hero Section End -->
+<!-- About Us Section Begin -->
+<section class="aboutus-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-text">
+                    <div class="section-title">
+                        <span>HAKKIMIZDA</span>
+                        <h2>MRZ<br />Lüx Otel</h2>
+                    </div>
+                    <p class="f-para">
+                        1980'lerin başında, Mahmut Maraz Ekinci tarafından Konya'da kurulan MRZ Oteli, şehrin prestijli konaklama mekânlarından biri oldu. Otelin logosu, Ekinci'nin iş vizyonunu yansıtan zarif bir tasarıma sahip: siyah ve altın renklerle stilize edilmiş bir 'M' harfi, hem Ekinci'nin soyadının baş harfi hem de otelin lüksünü temsil ediyor.
+                    </p>
+                    <p class="s-para">
+                        Yani konu mükemmel bir otel, kiralık tatil yeri, tatil köyü, daire, misafir evi veya ağaç ev rezervasyonu olduğunda, yanınızdayız.
+                    </p>
+                    <a href="#" class="primary-btn about-btn">DEVAMINI OKU</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-pic">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="img/about/about-1.jpg" alt="">
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="img/about/about-2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Us Section End -->
+<!-- Services Section End -->
+<section class="services-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>NE YAPIYORUZ</span>
+                    <h2>Hizmetlerimizi Keşfedin</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-036-parking"></i>
+                    <h4>Seyahat planı</h4>
+                    <p>
+                        Keşfedin, dinlenin ve deneyimleyin. Otelimizde unutulmaz bir seyahat planı için size özel konaklama seçenekleri sunuyoruz."
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-033-dinner"></i>
+                    <h4>Yemek servisi</h4>
+                    <p>
+                        Temizliğin ve konforun bir araya geldiği yer! Otelimizin profesyonel ekibi, hassas ve kaliteli çamaşır hizmetiyle konaklamanızı daha da rahat kılıyor.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-026-bed"></i>
+                    <h4>Bebek bakıcılığı</h4>
+                    <p>
+                        Çocuğunuz güvende, siz rahat! Otelimizde profesyonel bebek bakıcılığı hizmetiyle, seyahatinizin her anında minik misafirimizi güvenle emanet edebilirsiniz. Uzman ekibimizle keyifli bir konaklama deneyimi yaşayın.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-024-towel"></i>
+                    <h4>Çamaşır</h4>
+                    <p>
+                        Temizliğin ve konforun bir araya geldiği yer! Otelimizin profesyonel ekibi, hassas ve kaliteli çamaşır hizmetiyle konaklamanızı daha da rahat kılıyor.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-044-clock-1"></i>
+                    <h4>Kiralık Sürücü</h4>
+                    <p>
+                        Yolculuğunuzu kolaylaştırıyoruz! Otelimizde kiralık sürücü hizmetiyle şehri güvenli ve konforlu bir şekilde keşfedin. Deneyimli sürücülerimizle seyahatinizi daha keyifli kılın.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-012-cocktail"></i>
+                    <h4>Bar ve İçecek</h4>
+                    <p>
+                        Lezzeti barda bulun! Otelimizde sunduğumuz özel içecek seçenekleriyle günün yorgunluğunu unutun. Uzman mixologistlerimiz, eşsiz kokteyllerle deneyiminizi zirveye taşıyor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section End -->
+<!-- Home Room Section Begin -->
+<section class="hp-room-section">
+    <div class="container-fluid">
+        <div class="hp-room-items">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="hp-room-item set-bg" data-setbg="img/room/room-b1.jpg">
+                        <div class="hr-text">
+                            <h3>Çift Kişilik Oda</h3>
+                            <h2>1000 TL<span>/Gecelik</span></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Boyut:</td>
+                                        <td>30 m2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Kapasite:</td>
+                                        <td>En Fazla 2 Kişi</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Yatak:</td>
+                                        <td>Kral Yatak</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Servisler:</td>
+                                        <td>Wifi, Televizyon, Banyo,...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="#" class="primary-btn">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="hp-room-item set-bg" data-setbg="img/room/room-b2.jpg">
+                        <div class="hr-text">
+                            <h3>Premium Kral Oda</h3>
+                            <h2>1500 TL<span>/Gecelik</span></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Boyut:</td>
+                                        <td>45 m2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Kapsite:</td>
+                                        <td>En Fazla 2 Kişi</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Yatak:</td>
+                                        <td>Kral Yatak</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Servisler:</td>
+                                        <td>Wifi, Televizyon, Banyo,Yemek...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="#" class="primary-btn">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="hp-room-item set-bg" data-setbg="img/room/room-b3.jpg">
+                        <div class="hr-text">
+                            <h3>Lüks Oda</h3>
+                            <h2>2000 TL<span>/Gecelik</span></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Boyut:</td>
+                                        <td>45 m2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Kapsite:</td>
+                                        <td>En Fazla 2 Kişi</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Yatak:</td>
+                                        <td>Kral Yatak</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Servisler:</td>
+                                        <td>Wifi, Televizyon, Banyo,...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="#" class="primary-btn">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="hp-room-item set-bg" data-setbg="img/room/room-b4.jpg">
+                        <div class="hr-text">
+                            <h3>Aile Oda</h3>
+                            <h2>2000 TL<span>/Gecelik</span></h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Boyut:</td>
+                                        <td>60 m2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Kapsite:</td>
+                                        <td>En Fazla 4 Kişi</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Yatak:</td>
+                                        <td>İki Adet Kral Yatak</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Servisler:</td>
+                                        <td>Wifi, Televizyon, Banyo,Yemek,...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="#" class="primary-btn">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Home Room Section End -->
+<!-- Testimonial Section Begin -->
+<section class="testimonial-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>GÖRÜŞLER</span>
+                    <h2>Müşteriler Ne Diyor?</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="testimonial-slider owl-carousel">
+                    <div class="ts-item">
+                        <p>
+                            Bir inşaat projesi beklenenden uzun sürdükten sonra eşim, kızım ve ben
+                            birkaç gece kalacak bir yere ihtiyacı vardı. Bir Chicago sakini olarak, hayatımız hakkında çok şey biliyoruz.
+                            şehir, mahalle ve konut çeşitleri mevcut ve kesinlikle çok seviyoruz
+                            Sona Otel'de tatil.
+                        </p>
+                        <div class="ti-author">
+                            <div class="rating">
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star-half_alt"></i>
+                            </div>
+                            <h5> - Mahmut Ekinci</h5>
+                        </div>
+                    </div>
+                    <div class="ts-item">
+                        <p>
+                            Otelinizdeki deneyimim, beklediğimden çok daha iyiydi. Yemeklerin lezzeti, konforlu odalar ve dostane personel ile harika bir tatil geçirdim. Herkese tavsiye ederim.
+                        </p>
+                        <div class="ti-author">
+                            <div class="rating">
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star-half_alt"></i>
+                            </div>
+                            <h5> - Mehmet Tomruk</h5>
+                        </div>
+                        
+                    </div>
+
+                    <div class="ts-item">
+                        <p>
+                            Otelinizdeki konaklamamdan son derece memnun kaldım. Oda temizliği, personelin ilgisi ve sunduğunuz hizmetler harikaydı. Tekrar ziyaret etmek için sabırsızlanıyorum.
+                        </p>
+                        <div class="ti-author">
+                            <div class="rating">
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star-half_alt"></i>
+                            </div>
+                            <h5> - Ayşe Karaç</h5>
+                        </div>
+
+                    </div>
+
+                    <div class="ts-item">
+                        <p>
+                            Otelinizde geçirdiğim zaman boyunca, konukseverliğiniz ve kaliteli hizmetinizle kendimi evimde gibi hissettim. Özellikle SPA ve wellness olanakları benim için çok özeldi. Teşekkürler!
+                        </p>
+                        <div class="ti-author">
+                            <div class="rating">
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star-half_alt"></i>
+                            </div>
+                            <h5> - Selin Yıldız</h5>
+                        </div>
+
+                    </div>
+                    <div class="ts-item">
+                        <p>
+                            İş seyahati için geldiğim otelinizde, profesyonel hizmetiniz ve modern olanaklarınızla çok etkilendim. Konumu, temizliği ve rahatlığı ile harika bir deneyimdi. Tebrikler!
+                        </p>
+                        <div class="ti-author">
+                            <div class="rating">
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star"></i>
+                                <i class="icon_star-half_alt"></i>
+                            </div>
+                            <h5> - Caner Afran</h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Section End -->

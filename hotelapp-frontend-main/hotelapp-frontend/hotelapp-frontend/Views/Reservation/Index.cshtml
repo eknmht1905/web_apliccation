@@ -1,0 +1,51 @@
+﻿@model IEnumerable<hotelapp_frontend.Models.Habitacion>
+
+
+@{
+    ViewData["Title"] = "Reservation Entry Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="rooms-section spad">
+    <div class="container">
+        <br />
+        <h3>Odalarımız</h3>
+        <br />
+        <br />
+        <div class="row">
+            @foreach (var habitacion in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="room-item">
+                        <img src="@habitacion.Path_Img" alt="">
+                        <div class="ri-text">
+                            <h4>@habitacion.NombreHabitacion</h4>
+                            <h3>@habitacion.CostoNoche<span> TL</span></h3>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Kapasite:</td>
+                                        <td>@habitacion.CantPersonas Kişi</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Mevcut Mu:</td>
+                                        <td>@(habitacion.Disponible ? "Evet" : "Hayır")</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            @if (habitacion.Disponible)
+                            {
+                                <button class="btn btn-primary" onclick="location.href='@Url.Action("Detalle", "Reservation", new { id = habitacion.IDHabitacion })'">İncele</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-secondary" disabled>Müsait Değil</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

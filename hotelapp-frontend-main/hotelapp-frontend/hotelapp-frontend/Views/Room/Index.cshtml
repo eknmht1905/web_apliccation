@@ -1,0 +1,71 @@
+﻿@model IEnumerable<hotelapp_frontend.Models.Habitacion>
+
+@{
+    ViewData["Title"] = "Rooms Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<section class="rooms-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Oda Düzenleme</h3>
+                <div class="d-flex justify-content-end mb-3">
+                    <a href="@Url.Action("Crear", "Room")" class="btn btn-success">Ekle</a>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Resim</th>
+                            <th>İsim</th>
+                            <th>Maliyet</th>
+                            <th>Kapasite</th>
+                            <th>Mevcut Mu</th>
+                            <th>Haraketler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var habitacion in Model)
+                        {
+                            <tr>
+                                <td><img src="@habitacion.Path_Img" alt="" class="img-thumbnail" style="max-height: 100px;"></td>
+                                <td>@habitacion.NombreHabitacion</td>
+                                <td>@habitacion.CostoNoche</td>
+                                <td>En Fazla @habitacion.CantPersonas Kişi</td>
+                                <td>@(habitacion.Disponible ? "Evet" : "Hayır")</td>
+                                <td>
+                                    <a href="@Url.Action("Detalle", "Room", new { id = habitacion.IDHabitacion })" class="btn btn-info">Detaylar</a>
+                                    <a href="@Url.Action("Editar", "Room", new { id = habitacion.IDHabitacion })" class="btn btn-warning">Düzenle</a>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal_@habitacion.IDHabitacion">Sil</button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="deleteModal_@habitacion.IDHabitacion" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteModalLabel">Silme Onayı</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Bu odayı silmek istediğinizden emin misiniz: @habitacion.NombreHabitacion?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="@Url.Action("Eliminar", "Room", new { id = habitacion.IDHabitacion })" class="btn btn-danger">Sil</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

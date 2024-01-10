@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = hotelapp_frontend
+build_property.RootNamespace = hotelapp_frontend
+build_property.ProjectDir = C:\Users\Duant\OneDrive\Documentos\GitHub\hotelapp-frontend\hotelapp-frontend\hotelapp-frontend\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Duant\OneDrive\Documentos\GitHub\hotelapp-frontend\hotelapp-frontend\hotelapp-frontend
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/About/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcQ29udGFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Reservation/ConfirmacionReserva.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cQ29uZmlybWFjaW9uUmVzZXJ2YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Reservation/Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cRGV0YWxsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Reservation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Reservation/ReservacionesAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cUmVzZXJ2YWNpb25lc0FkbWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Reservation/ReservaHabitacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cUmVzZXJ2YUhhYml0YWNpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Room/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxDcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Room/Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxEZXRhbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Room/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Room/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/User/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/User/Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhbGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/User/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/User/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-xxwljsufv0
+
+[C:/Users/Duant/OneDrive/Documentos/GitHub/hotelapp-frontend/hotelapp-frontend/hotelapp-frontend/Views/Shared/_Layout_Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-v55hfpy8nf

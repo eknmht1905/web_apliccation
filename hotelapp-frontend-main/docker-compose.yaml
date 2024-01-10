@@ -1,0 +1,33 @@
+version: '3.4'
+
+networks:
+  vizeprojemapp1:
+
+services:
+  vizeprojemappdb1:
+    container_name: vize-projem-app-db1
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+     - 8002:1433
+    environment:
+     - ACCEPT_EULA=Y
+     - SA_PASSWORD=Password
+    networks:
+     - vizeprojemapp1
+
+  vize-projem1:
+    container_name: vize-projem-app1
+    image: add/vize-projem1
+    build:
+      context: .
+      dockerfile: hotelapp-frontend/hotelapp-frontend/Dockerfile
+    ports:
+      - 8001:80 
+    depends_on:
+      - vizeprojemappdb1
+    environment:
+      - DB_HOST=vizeprojemappdb1
+      - DB_NAME=DbWebVizeProject
+      - DB_SA_PASSWORD=Password
+    networks:
+      - vizeprojemapp1

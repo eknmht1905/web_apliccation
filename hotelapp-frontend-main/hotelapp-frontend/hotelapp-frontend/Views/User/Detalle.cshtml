@@ -1,0 +1,51 @@
+﻿@model hotelapp_frontend.Models.Usuario
+@{
+    ViewData["Title"] = "Detalles de Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/style.css" type="text/css" asp-append-version="true">
+
+<section class="rooms-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    <h2>Kullanıcı Özelikleri</h2>
+                    <div class="bt-option">
+                        <a asp-area="" asp-controller="User" asp-action="Index">Kullanıcılar</a>
+                        <span>Kullanıcı Özelikleri</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="ri-text">
+                    <div class="form-group">
+                        <label asp-for="Nombre">Adınız:</label>
+                        <input asp-for="Nombre" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FechaNacimiento">Doğum Tarihiniz:</label>
+                        <input asp-for="FechaNacimiento" type="date" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Correo">E-Posta:</label>
+                        <input asp-for="Correo" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Estado" class="form-check-label">Durum</label>
+                        <div class="form-check form-check-inline">
+                            <input asp-for="Estado" type="checkbox" class="form-check-input" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Yetkisi:</label>
+                        <span>@ViewBag.NombreRol</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

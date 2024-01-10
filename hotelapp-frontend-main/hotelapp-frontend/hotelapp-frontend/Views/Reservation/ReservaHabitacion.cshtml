@@ -1,0 +1,74 @@
+﻿@model hotelapp_frontend.Models.Habitacion
+
+@{
+    ViewData["Title"] = "Room Reservation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="room-reservation-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="room-details-img">
+                    <img src="@Model.Path_Img" alt="@Model.NombreHabitacion">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="room-reservation-content">
+                    <h2>@Model.NombreHabitacion -</h2>
+                    <h3>@Model.CostoNoche TL/Gecelik</h3>
+                    <br />
+                    <br />
+                    <form asp-controller="Reservation" asp-action="Reservar" method="post">
+                        <input type="hidden" name="IDHabitacion" value="@Model.IDHabitacion" required/>
+                        <div class="form-group">
+                            <label for="FechaInicio">Giriş Tarihi:</label>
+                            <input type="date" class="form-control" id="FechaInicio" name="FechaInicio" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="FechaFin">Çıkış Tarihi:</label>
+                            <input type="date" class="form-control" id="FechaFin" name="FechaFin" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="CantidadNoches">Gece Sayısı:</label>
+                            <input type="number" class="form-control" id="CantidadNoches" name="CantidadNoches" required />
+                        </div>
+                        <h4>Ödeme Bilgileris:</h4>
+                        <div class="form-group">
+                            <label for="NumeroTarjeta">Kart Numarası:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="NumeroTarjeta" name="NumeroTarjeta" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="NombreTarjeta">Kart İsmi:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="NombreTarjeta" name="NombreTarjeta" required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="CVV">CVV:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                </div>
+                                <input type="password" class="form-control" id="CVV" name="CVV" required />
+                            </div>
+                        </div>
+                        @if (Model.Disponible)
+                        {
+                            <button class="btn btn-primary" onclick="location.href='@Url.Action("ConfirmacionReserva", "Reservation", new { id = Model.IDHabitacion })'">Rezerve Et</button>
+                        }
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

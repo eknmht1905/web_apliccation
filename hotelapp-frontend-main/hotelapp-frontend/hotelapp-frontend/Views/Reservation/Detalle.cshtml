@@ -1,0 +1,64 @@
+﻿@model hotelapp_frontend.Models.Habitacion
+
+@{
+    ViewData["Title"] = "Room Details Reservation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="room-details-section spad">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-lg-12">
+                <div class="breadcrumb-text">
+                    <div class="bt-option">
+                        <a asp-area="" asp-controller="Reservation" asp-action="Index">Odalarımız</a>
+                        <span>Özelikler</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+           
+            
+            <div class="col-lg-6">
+                <div class="room-details-img">
+                    <img src="@Model.Path_Img" alt="@Model.NombreHabitacion">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="room-details-content">
+                    <h2>@Model.NombreHabitacion -</h2>
+                    <h3>@Model.CostoNoche TL</h3>
+                    <br />
+                    <br />
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="r-o">Kapasite:</td>
+                                <td>@Model.CantPersonas</td>
+                            </tr>
+                            <tr>
+                                <td class="r-o">Yatak Sayısı:</td>
+                                <td>@Model.CantCamas</td>
+                            </tr>
+                            <tr>
+                                <td class="r-o">Tanım:</td>
+                                <td>@Model.Descripcion</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    @if (Model.Disponible)
+                        {
+                        <button class="btn btn-primary" onclick="location.href='@Url.Action("ReservaHabitacion", "Reservation", new { id = Model.IDHabitacion })'">Reserve Et</button>
+                        }
+                 
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

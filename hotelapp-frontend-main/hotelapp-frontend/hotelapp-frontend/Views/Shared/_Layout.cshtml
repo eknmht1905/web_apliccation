@@ -1,0 +1,207 @@
+﻿@inject IHttpContextAccessor _contextAccessor;
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sona Template">
+    <meta name="keywords" content="Sona, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MRZ Otel</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/css/style.css" type="text/css" asp-append-version="true">
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+        <i class="icon_menu"></i>
+    </div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <i class="icon_close"></i>
+        </div>
+        <div class="header-configure-area">
+            @if (_contextAccessor.HttpContext.Session.GetString("NombreUsuario") != null)
+            {
+                <a href="#" class="bk-btn">Hoşgeldiniz @_contextAccessor.HttpContext.Session.GetString("NombreUsuario")!</a>
+            }
+            else
+            {
+                <a asp-area="" asp-controller="User" asp-action="Login">Iniciar sesión</a>
+            }
+        </div>
+        <nav class="mainmenu mobile-menu">
+            <ul>
+                <li @*class="active"*@><a asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                @if (_contextAccessor.HttpContext.Session.GetInt32("RolUsuario") != null && _contextAccessor.HttpContext.Session.GetInt32("RolUsuario") == 1)
+                {
+                    <li>
+                        <a>Düzeltme Alani</a>
+                        <ul class="dropdown">
+                            <li><a asp-area="" asp-controller="Room" asp-action="Index">Odalar</a></li>
+                            <li><a asp-area="" asp-controller="User" asp-action="Index">Kullanıcılar</a></li>
+                            <li><a asp-area="" asp-controller="ReservationM" asp-action="Index">Rezervasyon Admin</a></li>
+                        </ul>
+                    </li>
+                }
+                <li><a asp-area="" asp-controller="Reservation" asp-action="Index">Rezervasyonlar</a></li>
+                <li><a asp-area="" asp-controller="About" asp-action="Index">Hakkımızda</a></li>
+                <li><a asp-area="" asp-controller="About" asp-action="Contact">İletişim</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="top-social">
+            <a href="https://www.instagram.com/ekincimahmutmaraz/"><i class="fa fa-instagram"></i></a>
+        </div>
+        <ul class="top-widget">
+            <li><i class="fa fa-phone"></i>(0312) 805 14 65</li>
+            <li><i class="fa fa-envelope"></i>mrzotel@gmail.com</li>
+        </ul>
+    </div>
+    <!-- Offcanvas Menu Section End -->
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="top-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="tn-left">
+                            <li><i class="fa fa-phone"></i>(0312) 805 14 65</li>
+                            <li><i class="fa fa-envelope"></i>mrzotel@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="tn-right">
+                            <div class="top-social">
+                                <a href="https://www.instagram.com/ekincimahmutmaraz/"><i class="fa fa-instagram"></i></a>
+                                @if (_contextAccessor.HttpContext.Session.GetString("NombreUsuario") != null)
+                                {
+                                    <a href="@Url.Action("Editar", "User", new { id = Context.Session.GetInt32("IdUsuario") })" class="bk-btn">
+                                        Hoşgeldiniz @Context.Session.GetString("NombreUsuario")!
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a asp-area="" asp-controller="User" asp-action="Login">Giriş Yap</a>
+                                }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">
+                                <img src="img/mrz_logo.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="nav-menu">
+                            <nav class="mainmenu">
+                                <ul>
+                                    <li @*class="active"*@><a asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                                   
+                                      @if (_contextAccessor.HttpContext.Session.GetInt32("RolUsuario") != null && _contextAccessor.HttpContext.Session.GetInt32("RolUsuario") == 1)
+                                      {
+                                     <li>
+                                                    <a>Düzeltme Alani</a>
+                                        <ul class="dropdown">
+                                                        <li><a asp-area="" asp-controller="Room" asp-action="Index">Odalar</a></li>
+                                                        <li><a asp-area="" asp-controller="User" asp-action="Index">Kullanıcılar</a></li>
+                                                        <li><a asp-area="" asp-controller="Reservation" asp-action="ReservacionesAdmin">Rezervasyon Admin</a></li>
+                                        </ul>
+                                    </li>
+                                    }
+                                    <li><a asp-area="" asp-controller="Reservation" asp-action="Index">Rezervasyonlar</a></li>
+                                            <li><a asp-area="" asp-controller="About" asp-action="Index">Hakkımızda</a></li>
+                                            <li><a asp-area="" asp-controller="About" asp-action="Contact">İletişim</a></li>
+                                </ul>
+                            </nav>
+                            <div class="nav-right">
+                               <a href="~/User/SignOut"><i class="fa fa-sign-out fa-4x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+    @RenderBody()
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="ft-about">
+                            <div class="logo">
+                                <a href="#">
+                                    <img src="~/img/mrz_logo.jpg" alt="" height="80" width="300">
+                                </a>
+                            </div>
+                            <p>
+                                Milyonlarca gezgine ilham veriyor ve onlara ulaşıyoruz
+                                <br /> 90 yerel web sitesinde
+                            </p>
+                            <div class="fa-social">
+                                <a href="https://www.instagram.com/ekincimahmutmaraz/"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1">
+                        <div class="ft-contact">
+                            <h6>BİZE ULAŞIN</h6>
+                            <ul>
+                                <li>(0312) 805 14 65</li>
+                                <li>mrzotel@gmail.com</li>
+                                <li>Bosna Hersek, Çetiner Sk. No:6, 42250 Selçuklu/Konya</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/jquery.nice-select.min.js"></script>
+    <script src="~/js/jquery-ui.min.js"></script>
+    <script src="~/js/jquery.slicknav.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="js/main.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
